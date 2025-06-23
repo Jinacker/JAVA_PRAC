@@ -79,9 +79,9 @@ public class Main {
 
         //문자로된 정수와 실수의 변환함수
         System.out.println("99"+"100");
-        System.out.println(Integer.parseInt("99")+Integer.parseInt("100"));
+        System.out.println(Integer.parseInt("99")+Integer.parseInt("100")); // 이거 코테에 나옴 !!!!! 잘 알아둘것.
         System.out.println("99.99"+"100.123");
-        System.out.println(Double.parseDouble("99.99")+Double.parseDouble("100.123"));
+        System.out.println(Double.parseDouble("99.99")+Double.parseDouble("100.123")); // 이거 코테에 나옴!!!!!
 
         //아스키코드 정리해서 몇개는 암기
         System.out.println((int)'0');//48
