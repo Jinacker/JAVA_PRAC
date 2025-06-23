@@ -1,0 +1,70 @@
+package test.com;
+
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStreamReader;
+import java.util.Scanner;
+
+public class Main04_for3_mission2 {
+    public static void main(String[] args)  {
+        System.out.println("hello...");
+
+        //Main03_mission2.java 파일을 이용하여
+        //3명의 학생을 성적처리하는 프로그램을 작성하세요
+        //Scanner 사용하기
+        Scanner s = new Scanner(System.in);
+
+        String result = "";//문자열을 모아서 출력할 변수
+        for (int i = 0; i < 3; i++) {
+
+            System.out.println("이름:");
+            String name =  s.nextLine();
+
+            //변수 - 국어kor,영어eng,수학math,총점total,평균avg,등급grade
+            System.out.println("국어:");
+            int kor =  Integer.parseInt(s.nextLine());
+
+            System.out.println("영어:");
+            int eng =  Integer.parseInt(s.nextLine());
+
+            System.out.println("수학:");
+            int math =  Integer.parseInt(s.nextLine());
+
+            int total = kor+eng+math;
+
+            double avg = total/3.0;
+
+
+            String grade = "A";
+
+            if(avg<=100 && avg >=90){
+                grade = "A";
+            }else if(avg >=80){
+                grade = "B";
+            }else if(avg >=70){
+                grade = "C";
+            }else{
+                grade = "D";
+            }
+
+            System.out.print("이름:"+name);
+            System.out.print(" 국어:"+kor);
+            System.out.print(" 영어:"+eng);
+            System.out.print(" 수학:"+math);
+            System.out.print(" 총점:"+total);
+            System.out.print(" 평균:"+avg);
+            System.out.println("등급:"+grade);
+
+            //result += "이름:"+name+" 국어:"+kor+" 영어:"+eng+" 수학:"+math
+            //            +" 총점:"+total+" 평균:"+avg+"등급:"+grade+"\n";
+            result += String.format("이름:%s 국어:%d 영어:%d 수학:%d 총점:%d 평균:%.2f 등급:%s\n",
+                    name,kor,eng,math,total,avg,grade);
+        }//end for
+        System.out.println("=============");
+        //반복문 종료후 아래와같이 3줄로 출력되도록 해보세요
+        //이름:kim 국어:11 영어:22 수학:33 총점:66 평균:22.0등급:D
+        //이름:lee 국어:33 영어:44 수학:55 총점:132 평균:44.0등급:D
+        //이름:han 국어:77 영어:88 수학:99 총점:264 평균:88.0등급:B
+        System.out.println(result);
+    }//end main
+}//end class
